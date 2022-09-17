@@ -13,8 +13,8 @@ public class StockService {
         this.stockRepository = stockRepository;
     }
 
-    @Transactional
-    public void decrease(Long id, Long quantity) {
+    // @Transactional
+    public synchronized void decrease(Long id, Long quantity) {
         // 재고 조회
         Stock stock = stockRepository.findById(id)
                                      .orElseThrow(RuntimeException::new);
