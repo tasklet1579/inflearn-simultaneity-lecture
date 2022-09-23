@@ -80,3 +80,21 @@ Named Lock
 - 별도의 명령어로 해제하거나 선점 시간이 끝나야 해제됩니다.
 
 </details>
+
+<details>
+<summary>✍️ Redis 라이브러리</summary>
+<br>
+
+Lettuce
+
+- setnx 명령어를 활용하여 분산락 구현
+- spin lock 방식
+    - 스레드가 락을 획득할 수 있는지 반복적으로 확인함
+
+Redisson
+
+- pub-sub 반의 락 구현 제공
+    - 채널을 만들고 락을 점유중인 스레드가 대기중인 스레드에게 해제를 알림
+    - 별도의 리트라이 로직을 작성할 필요 없음
+
+</details>
