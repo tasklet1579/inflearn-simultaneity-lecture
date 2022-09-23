@@ -98,3 +98,19 @@ Redisson
     - 별도의 리트라이 로직을 작성할 필요 없음
 
 </details>
+
+<details>
+<summary>✍️ Redis 설치</summary>
+<br>
+
+docker pull redis
+
+docker run --name myredis -d -p 6379:6379 redis
+
+docker ps
+
+docker exec -it myredis redis-cli
+
+setnx 1 lock
+
+</details>
